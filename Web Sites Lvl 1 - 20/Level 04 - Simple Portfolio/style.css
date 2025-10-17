@@ -1,0 +1,197 @@
+/* === Global === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0f10, #10163a);
+    color: #e0e0e0;
+}
+
+/* === Portfolio Container === */
+.portfolio {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* === Intro Section === */
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.textIntro {
+    max-width: 500px;
+}
+
+.textIntro h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.textIntro p {
+    color: #d0d0d0;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.textIntro .links a {
+    color: #7cc0ff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin-right: 12px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.textIntro .links a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.intro img {
+    border-radius: 20px;
+    border: 2px solid #2a2a2a;
+}
+
+/* === Skills Section === */
+.skills {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.skills h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.skillsRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.skill {
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    padding: 25px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+.skill p {
+    color: #e5e5e5;
+    margin-top: 10px;
+}
+
+/* === Projects Section === */
+.projects {
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.project {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    padding: 30px;
+}
+.project img{
+    border-radius: 20px;
+}
+.projectDetails {
+    max-width: 500px;
+    text-align: left;
+}
+
+.projectDetails h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.projectDetails p {
+    color: #d8d8d8;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.projectDetails a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.projectDetails a:hover {
+    background-color: #3399ff;
+    transform: translateY(-3px);
+}
+
+/* === Outro === */
+.outro {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.outro h3 {
+    font-weight: 300;
+    font-style: italic;
+    color: #cfcfcf;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .intro, .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .projectDetails {
+        text-align: center;
+    }
+
+    .textIntro {
+        max-width: 100%;
+    }
+
+    .portfolio {
+        padding: 20px;
+        margin: 20px;
+    }
+}
