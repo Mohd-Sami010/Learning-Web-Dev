@@ -69,20 +69,3 @@ li {
   align-items: center;
   transition: 0.3s;
 }
-
-li.completed {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-button.deleteBtn {
-  background: #ef4444;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-button.deleteBtn:hover {
-  background: #dc2626;
-}
