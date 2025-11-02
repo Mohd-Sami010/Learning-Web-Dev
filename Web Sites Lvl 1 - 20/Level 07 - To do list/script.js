@@ -12,6 +12,7 @@ function createNodeTodo(todo, index) {
   const li = document.createElement('li');
 
   const checkbox = document.createElement('input');
+  checkbox.id = "checkbox";
   checkbox.type = 'checkbox';
   checkbox.checked = !!todo.completed;
 
@@ -27,17 +28,9 @@ function createNodeTodo(todo, index) {
   if (todo.completed) {
     span.style.textDecoration = 'line-through';
   }
-  span.addEventListener("dblclick", () => {
-    const newText = prompt("Edit todo", todo.text);
-    if (newText !== null) {
-      todo.text = newText.trim();
-      span.textContent = todo.text;
-      saveTodos();
-    }
-  })
 
   const delBtn = document.createElement("button");
-  delBtn.textContent = "Delete";
+  delBtn.textContent = "X";
   delBtn.addEventListener('click', () => {
     todos.splice(index, 1);
     renderTodos();

@@ -15,11 +15,10 @@ body {
 }
 
 .todo-container {
-  background: #1e293b;
+  background: #000000;
   padding: 30px;
   border-radius: 20px;
   width: 350px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 h1 {
@@ -68,4 +67,23 @@ li {
   justify-content: space-between;
   align-items: center;
   transition: 0.3s;
+}
+#checkbox{
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+}
+li button{
+  width: 30px;
+  height: 30px;
+  background-color: #334155;
+  border: none;
+  border-radius: 10px;
+  color: red;
+
+  transition: background-color 0.2s;
+}
+li button:hover{
+  background-color: red;
+  color: white;
 }
