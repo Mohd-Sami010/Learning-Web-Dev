@@ -7,6 +7,8 @@ async function getWeather() {
 
     error.textContent = "";
     result.textContent = "";
+    let forcastDiv = document.getElementById("forcast");
+    forcastDiv.innerHTML = "";
 
     if (cityName === "") {
         error.textContent = "Enter a city name first.";
@@ -68,7 +70,6 @@ async function GetForcast(cityName) {
             let icon = dailyData[date].icon;
             let desc = dailyData[date].desc;
 
-            console.log(date);
             forcastDiv.innerHTML += `
                 <div class="forcast-day">
                     <p>${new Date(date).toLocaleDateString("en-US", { weekday: "short" })}</p>
