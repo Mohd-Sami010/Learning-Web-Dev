@@ -40,35 +40,36 @@ async function GetForcast(cityName) {
     let forcastDiv = document.getElementById("forcast");
     forcastDiv.innerHTML = "";
 
-    let url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=metric`;
-    let respose = await fetch(url);
-    if (!respose.ok) return;
+    try {
+        let url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=metric`;
+        let respose = await fetch(url);
+        if (!respose.ok) return;
 
-    let data = await respose.json();
+        let data = await respose.json();
 
-    let dailyData = {};
-    data.list.forEach(item => {
-        let date = item.dt_txt.split(" ")[0];
-        if (!dailyData[date]) {
-            dailyData[date] = {
-                temps: [],
-                icon: item.weather[0].icon,
-                desc: item.weather[0].description
-            };
-        }
-        dailyData[date].temps.push(item.main.temp);
-    });
+        let dailyData = {};
+        data.list.forEach(item => {
+            let date = item.dt_txt.split(" ")[0];
+            if (!dailyData[date]) {
+                dailyData[date] = {
+                    temps: [],
+                    icon: item.weather[0].icon,
+                    desc: item.weather[0].description
+                };
+            }
+            dailyData[date].temps.push(item.main.temp);
+        });
 
-    let days = Object.keys(dailyData).slice(0, 5);
-    days.forEach(date => {
-        let temps = dailyData[date].temps;
-        let max = Math.max(...temps).toFixed(1)
-        let min = Math.min(...temps).toFixed(1)
-        let icon = dailyData[date].icon;
-        let desc = dailyData[date].desc;
+        let days = Object.keys(dailyData).slice(0, 5);
+        days.forEach(date => {
+            let temps = dailyData[date].temps;
+            let max = Math.max(...temps).toFixed(1)
+            let min = Math.min(...temps).toFixed(1)
+            let icon = dailyData[date].icon;
+            let desc = dailyData[date].desc;
 
-        console.log(date);
-        forcastDiv.innerHTML += `
+            console.log(date);
+            forcastDiv.innerHTML += `
                 <div class="forcast-day">
                     <p>${new Date(date).toLocaleDateString("en-US", { weekday: "short" })}</p>
                     <img src="http://openweathermap.org/img/wn/${icon}.png" alt="${desc}">
@@ -76,5 +77,9 @@ async function GetForcast(cityName) {
                     <p>${min}° / ${max}°C</p>
                 </div>
                 `;
-    });
+        });
+    }
+    catch {
+        forcastDiv.innerHTML = "<p style='color:red;'>Forecast unavailable</p>";
+    }
 }
