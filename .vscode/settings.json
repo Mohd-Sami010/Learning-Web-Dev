@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/CWH video 0/hello.html"
+    "livePreview.defaultPreviewPath": "/CWH video 0/hello.html",
+    "code-runner.saveFileBeforeRun": true
 }
