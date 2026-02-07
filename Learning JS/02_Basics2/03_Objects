@@ -1,0 +1,17 @@
+// Singleton
+
+// Object Literals
+const Player = {
+    name: "Sami",
+    "full name": "Mohd Sami",
+    age: 18,
+    region: "Asia",
+    email: "mohdsamimalik01@gmail.com",
+    isLoggedIn: true,
+    lastLoginDays: ["Monday", "Saturday"]
+}
+
+console.log(Player)
+// console.log(Player.email)
+// console.log(Player["email"])
+// console.log(Player["full name"])
